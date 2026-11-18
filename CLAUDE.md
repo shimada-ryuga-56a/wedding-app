@@ -62,12 +62,22 @@
 
 以下は公開スキルを導入して使う。中身を書き換えたり、同じ役割のスキルを自作したりしない。
 
-- `grill-me`（mattpocock/skills）：設計・要件・タスク詳細を質問で詰める
+- `grilling`（mattpocock/skills）：設計・要件・タスク詳細を質問で詰める。グリルの本体
+- `grill-me`（mattpocock/skills）：私が `/grill-me` と打って grilling を始めるための入口。中身は grilling を呼ぶだけ
 - `natural-japanese`（coji/natural-japanese）：人間が読む日本語文書を書く・直す
+
+grill-me は Claude から自動では起動できない（`disable-model-invocation: true`）。スキルの中からグリルを始めるときは grilling を直接使う。
+
+### グリルの進め方
+
+- When grilling, ask one question at a time.
+- 質問は1問ずつ出し、私の答えを待ってから次の質問に進む。grilling の標準であるラウンド形式（答えられる質問をまとめて出す形）は使わない
+- 各質問には、おすすめの回答とその理由を添える
+- コードや環境を調べればわかる事実は私に聞かず、自分で調べる
 
 ## 開発フロー
 
-1. 全体設計：`grill-me` スキルで要件・設計を詰める
+1. 全体設計：`/grill-me` で要件・設計を詰め、決定事項を `../wedding-app-docs/decisions/` に書く
 2. タスク分割：`task-breakdown` スキルで Issue を作り、GitHub Projects に登録する
 3. 各タスク：`dev-task` スキルで「グリル → フェーズ文書・テスト項目表 → 各フェーズ実装 → テスト → PR」を行う
 4. コミット：`commit` スキル
