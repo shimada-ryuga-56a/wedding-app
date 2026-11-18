@@ -26,9 +26,8 @@ description: 作業ブランチの変更から、レビューしやすい PR を
 ### 3. PR 本文を書く
 - `.github/pull_request_template.md` の形式で書く
 - `natural-japanese` スキルに従って書く
-- docs リポジトリの plan.md・test-cases.md・learning.md へのリンクを入れる
-  - リンクの形式：`https://github.com/<owner>/wedding-app-docs/blob/main/tasks/<番号>-<slug>/plan.md`
-  - docs リポジトリが push されていなければ、先に push してよいか私に確認する
+- 書く節は「概要」「変更内容」「画面・動作確認」だけ。「設計上のポイント」「テスト」「関連ドキュメント」の節は作らない
+- 本文に `🤖 Generated with [Claude Code](https://claude.com/claude-code)` などの生成ツールの署名や、`Co-Authored-By` を入れてはいけない
 
 ### 4. 私に確認してから作る
 - タイトルと本文を私に見せ、OK をもらう
