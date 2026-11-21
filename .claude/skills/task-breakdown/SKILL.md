@@ -7,13 +7,14 @@ description: 決まった設計をもとに、1タスク＝1 Issue＝1 PR の粒
 
 ## 前提
 
-- 全体設計は grill-me で決まっていて、決定事項が `../wedding-app-docs/decisions/` にあること
+- 全体設計は grill-me で決まっていて、決定事項が設計文書にあること（置き場所は `CLAUDE.local.md`）
 - まだ決まっていなければ、先に grill-me を使うよう私に提案して止まる
 
 ## 手順
 
 ### 1. 入力を読む
-- `../wedding-app-docs/decisions/` の決定事項と CLAUDE.md を読む
+- 設計文書の決定事項と CLAUDE.md を読む
+- `CLAUDE.local.md` にタスクの一覧の置き場所があれば、それも読み、登録済みのタスクと重複しないようにする
 - 既存の Issue を `gh issue list --state all --limit 200` で確認し、重複を避ける
 
 ### 2. タスクに分割する
@@ -56,6 +57,8 @@ gh project item-add <プロジェクト番号> --owner <owner> --url <Issue URL>
 - Project 番号がわからないときは `gh project list --owner <owner>` で確認する
 - 依存関係は、Issue 本文の「依存」に `#番号` で書く
 
+Issue を作ったら、`CLAUDE.local.md` に書かれた手順があれば、それに従ってタスクの一覧にも登録する。
+
 ### Issue 本文テンプレート
 
 ```markdown
@@ -72,7 +75,9 @@ gh project item-add <プロジェクト番号> --owner <owner> --url <Issue URL>
 - #<番号>
 
 ## メモ
-<設計の決定事項へのリンクなど>
+<補足があれば書く>
 ```
 
 Issue の文章は `natural-japanese` スキルに従って書く。
+
+Issue は公開されるので、設計文書の中身を写したり、外部の文書へのリンクを貼ったりしない。目的と完了条件は、そのタスクを進めるのに必要な範囲で書く。

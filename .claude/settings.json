@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "additionalDirectories": ["../wedding-app-docs"],
     "allow": [
       "Bash(git status:*)",
       "Bash(git diff:*)",

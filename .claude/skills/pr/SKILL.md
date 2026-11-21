@@ -1,6 +1,6 @@
 ---
 name: pr
-description: 作業ブランチの変更から、レビューしやすい PR を作る。テスト・型チェックを通し、Issue と docs リポジトリの文書を紐づける。「PRを作って」と言われたとき、または dev-task の最後に使う。
+description: 作業ブランチの変更から、レビューしやすい PR を作る。テスト・型チェックを通し、Issue と紐づける。「PRを作って」と言われたとき、または dev-task の最後に使う。
 ---
 
 # pr：PR を作る
@@ -27,6 +27,7 @@ description: 作業ブランチの変更から、レビューしやすい PR を
 - `.github/pull_request_template.md` の形式で書く
 - `natural-japanese` スキルに従って書く
 - 書く節は「概要」「変更内容」「画面・動作確認」だけ。「設計上のポイント」「テスト」「関連ドキュメント」の節は作らない
+- 本文に、設計文書の中身や外部の文書へのリンクを入れない
 - 本文に `🤖 Generated with [Claude Code](https://claude.com/claude-code)` などの生成ツールの署名や、`Co-Authored-By` を入れてはいけない
 
 ### 4. 私に確認してから作る
