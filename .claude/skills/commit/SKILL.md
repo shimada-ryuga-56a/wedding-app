@@ -1,6 +1,6 @@
 ---
 name: commit
-description: 変更内容を確認し、Conventional Commits 形式の日本語メッセージで、意味のまとまりごとにコミットする。「コミットして」と言われたとき、または dev-task の各フェーズの終わりに使う。アプリと docs の両リポジトリで使う。
+description: 変更内容を確認し、Conventional Commits 形式の日本語メッセージで、意味のまとまりごとにコミットする。「コミットして」と言われたとき、または dev-task の各フェーズの終わりに使う。
 ---
 
 # commit：意味のまとまりごとにコミットする
@@ -9,7 +9,7 @@ description: 変更内容を確認し、Conventional Commits 形式の日本語�
 
 1. 状態を確認する
    - `git status`、`git diff`、`git diff --staged` を実行する
-   - 現在のブランチを確認する。`main` にいる場合はコミットせず、私に伝えて止まる（docs リポジトリは `main` への直接コミットでよい）
+   - 現在のブランチを確認する。`main` にいる場合はコミットせず、私に伝えて止まる。ただし、そのリポジトリの CLAUDE.md が `main` への直接コミットを認めている場合は除く
 2. コミットに含めないものを確認する
    - `.env`、認証情報、AWS のアクセスキー、Stripe のシークレットキー、`cdk.out/`、`node_modules/` が含まれていないか確認する
    - 見つけたら、コミットせずに私に伝える
