@@ -61,7 +61,3 @@ grill-me は Claude から自動では起動できない（`disable-model-invoca
 3. 各タスク：`dev-task` スキルで「用語の確認 → グリル → フェーズ文書・テスト項目表 → 各フェーズ実装 → テスト → PR」を行う
 4. コミット：`commit` スキル
 5. PR：`pr` スキル
-
-## コマンド
-
-（プロジェクト作成後に追記する：dev / build / test / test:e2e / lint / typecheck / cdk synth など）

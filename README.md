@@ -44,3 +44,26 @@ wedding-app/
 ```
 
 ディレクトリは、実装を進めながら順に作っていきます。
+
+## 開発の始め方
+
+Node.js 24 と corepack を使います。pnpm のバージョンは、ルートの `package.json` で固定しています。
+
+```bash
+corepack enable pnpm
+pnpm install
+pnpm --filter web exec playwright install chromium   # E2E テスト用のブラウザ
+```
+
+## コマンド
+
+どのコマンドも、リポジトリのルートで実行します。ルートのコマンドは、同じ名前のコマンドを持つすべてのパッケージで実行されます。
+
+| コマンド | やること |
+|---|---|
+| `pnpm dev` | 開発用のサーバーを起動する（http://localhost:3000） |
+| `pnpm build` | 本番用にビルドする |
+| `pnpm test` | 単体テスト（Vitest）を実行する |
+| `pnpm test:e2e` | E2E テスト（Playwright）を実行する。テストの前に、アプリをビルドして起動する |
+| `pnpm lint` | ESLint で検査する。層をまたぐ import の向きの誤りも、ここでエラーになる |
+| `pnpm typecheck` | TypeScript の型を検査する |
