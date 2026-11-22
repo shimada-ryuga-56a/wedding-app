@@ -3,21 +3,16 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 import boundaries from "eslint-plugin-boundaries";
 
-// 許可の書き方を短くするための部品
-// 「これらの層（フォルダ）を import してよい」
 const toLayers = (types) => ({ to: { element: { types } } });
-// 「コンポジションルートを import してよい」
 const toCompositionRoot = { to: { file: { categories: "composition-root" } } };
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // オニオンアーキテクチャの層の境界
   {
     files: ["src/**/*.{ts,tsx}"],
     plugins: { boundaries },
     settings: {
-      // どのフォルダが、どの層か
       "boundaries/elements": [
         { type: "domain", pattern: "src/domain" },
         { type: "application", pattern: "src/application" },
@@ -38,8 +33,6 @@ const eslintConfig = defineConfig([
         {
           default: "disallow",
           policies: [
-            // 依存してよいのは、自分より内側の層と、自分と同じ層だけ。
-            // 実装の組み立てはコンポジションルートだけが行い、presentation はそこから受け取る
             {
               from: { element: { type: "domain" } },
               allow: [toLayers(["domain"])],
