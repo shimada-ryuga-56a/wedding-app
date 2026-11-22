@@ -64,4 +64,15 @@ grill-me は Claude から自動では起動できない（`disable-model-invoca
 
 ## コマンド
 
-（プロジェクト作成後に追記する：dev / build / test / test:e2e / lint / typecheck / cdk synth など）
+どれもリポジトリのルートで実行する。ルートのコマンドは、同じ名前のコマンドを持つすべてのパッケージで実行される。
+
+| コマンド | やること |
+|---|---|
+| `pnpm dev` | 開発用のサーバーを起動する |
+| `pnpm build` | 本番用にビルドする |
+| `pnpm test` | 単体テスト（Vitest） |
+| `pnpm test:e2e` | E2E テスト（Playwright）。テストの前にアプリをビルドして起動する |
+| `pnpm lint` | ESLint。層をまたぐ import の向きの誤りもここで検出する |
+| `pnpm typecheck` | TypeScript の型チェック |
+
+パッケージを1つに絞るときは `pnpm --filter web <コマンド>` のように書く。CDK のコマンド（`cdk synth` など）は #7 で追加する。
