@@ -28,7 +28,8 @@ description: 1つの Issue を、用語の確認 → グリル → フェーズ�
 - `gh issue view <番号>` で Issue を読む
 - 依存タスクが終わっているか確認する。終わっていなければ私に伝えて止まる
 - 作業ブランチを切る：`git switch -c <番号>-<slug>`（例：`12-rsvp-form`）
-- 設計文書の置き場所を `CLAUDE.local.md` で確認する。タスクごとのページの作り方や状態の管理も、そこに書かれた手順に従う
+- GitHub Projects で、その Issue の Status を `In Progress` にする（`gh project item-edit <Project番号> --owner @me --url <Issue の URL> --field Status --value "In Progress"`）。タスクの状態は GitHub Projects だけで管理する。PR 作成後の `In Review` とマージ後の `Done` は、Projects の自動化で変わる
+- 設計文書の置き場所を `CLAUDE.local.md` で確認する。タスクごとのページの作り方も、そこに書かれた手順に従う
 - 必要に応じて、全体設計の決定事項を読む
 
 ## 2. 用語を確認する
