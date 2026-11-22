@@ -61,18 +61,3 @@ grill-me は Claude から自動では起動できない（`disable-model-invoca
 3. 各タスク：`dev-task` スキルで「グリル → フェーズ文書・テスト項目表 → 各フェーズ実装 → テスト → PR」を行う
 4. コミット：`commit` スキル
 5. PR：`pr` スキル
-
-## コマンド
-
-どれもリポジトリのルートで実行する。ルートのコマンドは、同じ名前のコマンドを持つすべてのパッケージで実行される。
-
-| コマンド | やること |
-|---|---|
-| `pnpm dev` | 開発用のサーバーを起動する |
-| `pnpm build` | 本番用にビルドする |
-| `pnpm test` | 単体テスト（Vitest） |
-| `pnpm test:e2e` | E2E テスト（Playwright）。テストの前にアプリをビルドして起動する |
-| `pnpm lint` | ESLint。層をまたぐ import の向きの誤りもここで検出する |
-| `pnpm typecheck` | TypeScript の型チェック |
-
-パッケージを1つに絞るときは `pnpm --filter web <コマンド>` のように書く。CDK のコマンド（`cdk synth` など）は #7 で追加する。
