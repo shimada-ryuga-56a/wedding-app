@@ -58,7 +58,7 @@ grill-me は Claude から自動では起動できない（`disable-model-invoca
 
 1. 全体設計：`/grill-me` で要件・設計を詰め、決定事項を設計文書に書く
 2. タスク分割：`task-breakdown` スキルで Issue を作り、GitHub Projects に登録する
-3. 各タスク：`dev-task` スキルで「グリル → フェーズ文書・テスト項目表 → 各フェーズ実装 → テスト → PR」を行う
+3. 各タスク：`dev-task` スキルで「用語の確認 → グリル → フェーズ文書・テスト項目表 → 各フェーズ実装 → テスト → PR」を行う
 4. コミット：`commit` スキル
 5. PR：`pr` スキル
 
