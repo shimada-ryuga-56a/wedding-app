@@ -72,4 +72,10 @@ describe("層の境界のルール", () => {
       expect(violated ? "error" : "ok").toBe(expected);
     },
   );
+
+  it("（わざと失敗）ドメイン層はアプリケーション層を import できる", async () => {
+    expect(
+      await violatesBoundary("src/domain/entity.ts", "@/application/use-case"),
+    ).toBe(false);
+  });
 });
