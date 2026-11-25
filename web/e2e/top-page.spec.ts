@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+const count: number = "3";
+
 test("E-01 トップページを開くと、見出し「Our Wedding」が表示される", async ({
   page,
 }) => {
