@@ -1,5 +1,3 @@
-import Page from "@/app/page";
-
 // 仮のトップページ。招待状の各セクションは #13 以降でここを作り直す。
 export function TopPage() {
   return (
